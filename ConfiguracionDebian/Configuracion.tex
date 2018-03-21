@@ -1,0 +1,421 @@
+\documentclass[10pt,letterpaper,spanish,numbers=endperiod]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[right=2cm,left=0.5cm,top=0cm,bottom=2cm,headsep=0cm,footskip=0.5cm]{geometry}
+%\usepackage[dvips]{graphicx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\usepackage[table]{xcolor}
+\usepackage{color, colortbl}
+\usepackage{hhline}
+\usepackage{tabularx,colortbl}
+\usepackage{tikz}
+\usepackage{enumerate}
+
+%Ruta de las imagenes
+\graphicspath{ {./imgs/} }
+
+% Method proposed in "The LaTeX Companion", 2nd ed.:
+\usepackage[colorlinks]{hyperref} % just for this example
+\usepackage{cleveref}             % just for this example
+\makeatletter
+\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
+   {\csname the#1\endcsname\space}%    default
+   {\csname #1@cntformat\endcsname}}%  enable individual control
+\newcommand\section@cntformat{\thesection.\space}       % section-level
+\newcommand\subsection@cntformat{\thesubsection.\space} % subsection-level
+\makeatother
+
+\begin{document}
+
+%Comandos para el diseño del documento
+\newcommand{\linea} %Agregamos una linea
+    {
+    \vskip 0.5cm
+    }
+		
+\newcommand{\lineas} %Agregamos una linea mas ancha
+    {
+    \vskip 2cm
+    }
+\newcommand{\masLineas} %Agregamos una linea mas ancha
+    {
+    \vskip 8cm
+    }		
+		
+\newenvironment{centrar}{% Permite centrar un bloque de texto
+  \setlength\topsep{0pt}
+  \setlength\parskip{0pt}
+  \begin{center}
+}{\end{center}}
+		
+		
+\noindent\begin{minipage}{0.2\textwidth}
+\includegraphics[width=\linewidth]{logo}
+\end{minipage}
+
+\masLineas
+
+\begin{tikzpicture}[ultra thick]
+\draw[red,thick] (0,0) -- (\textwidth,0);
+\end{tikzpicture}
+
+\linea
+\begin{centrar}
+Taller de Dise\~no de Aplicaciones
+\end{centrar}
+\linea
+
+\begin{tikzpicture}[ultra thick]
+\draw[red,thick] (0,0) -- (\textwidth,0);
+\end{tikzpicture}
+
+
+\pagebreak  %Salto a pagina 2 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+\lineas
+\large\bfseries Configuraci\'on de equipamiento y de red para Teletrabajo en empresa FastDevelopment
+\linea
+\textbf{Pasos para la configuraci\'on del servidor:}
+\normalsize 
+\linea
+\section{Configuraci\'on de arranque} \label{sec:uno}
+
+\centerline{\begin{minipage}{0.8\textwidth}
+\includegraphics[width=\linewidth]{arranque}
+\end{minipage}}
+\linea
+\subsection{Reiniciar el equipo} \label{sec:uno_uno}
+\subsection{Presionar  la tecla asociada para acceder al men\'u de configuraci\'on de la BIOS. Normalmente suele ser Delete (Supr) o F2 pero dependiendo del fabricante de la misma tambi\'en pudiera ser F1, F10, F11, F12.} \label{sec:uno_dos}
+\subsection{Desplazarse por los distintos men\'us de la BIOS hasta localizar Advanced BIOS Features (Caracter\'isticas avanzadas de la BIOS), dependiendo del fabricante. tambi\'en puede aparecer como Boot dentro del men\'u mostrado en la parte superior (seg\'un la imagen), o incluso alguna otra opci\'on diferente.} \label{sec:uno_tres}
+\subsection{Modificar la opci\'on First Boot Device (Primer dispositivo de arranque) eligiendo seg\'un nuestras necesidades: CD, Floppy, USB (Remove device).} \label{sec:uno_cuatro}
+\subsection{Salir y guardar los cambios. Esta opci\'on suele realizarse pulsando F10 (Save & Exit Setup) y luego confirmando la operaci\'on en el men\'u de confirmaci\'on.} \label{sec:uno_cinco}
+
+
+\pagebreak %Salto a pagina 3 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\section{Configuraci\'on del S.O.} \label{sec:dos}
+Para esta implementaci\'on se ha seleccionado la distribuci\'on del Sistema Operativo Debian, sobre una maquina virtual Oracle VM.
+
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c c}
+    \begin{minipage}{.4\textwidth}
+      \includegraphics[width=\linewidth, height=60mm]{logoVirtualBox}
+    \end{minipage}
+    &
+     \begin{minipage}{.3\textwidth}
+      \includegraphics[width=\linewidth, height=60mm]{debian_stretch}
+    \end{minipage}
+  \end{tabular}
+\end{table}
+
+\lineas
+
+\subsection{Creaci\'on de maquina Servidor} \label{sec:dos_uno}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_1}
+\end{minipage}}
+
+\linea
+
+\subsection{Creaci\'on de disco duro (HDD)} \label{sec:dos_dos}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_2}
+\end{minipage}}
+
+\pagebreak %Salto a pagina 4 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\linea
+\subsection{Se inserta ISO a unidad \'optica} \label{sec:dos_tres}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_3}
+\end{minipage}}
+
+\linea
+\subsection{Se habilita 1 tarjeta de red} \label{sec:dos_cuatro}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_4}
+\end{minipage}}
+
+\linea
+\subsection{Se habilita segunda tarjeta de red, en esta ocasi\'on de mantendr\'a como desconectada mientras se realiza la instalaci\'on del S.O.} \label{sec:dos_cinco}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_5}
+\end{minipage}}
+
+\pagebreak %salto de pagina 5 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Se Inicia MV usando el .ISO configurado inicialmente} \label{sec:dos_sies}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_6}
+\end{minipage}}
+
+\linea
+\subsection{Selecci\'on de idioma para el proceso de intalaci\'on} \label{sec:dos_siete}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_7}
+\end{minipage}}
+
+\linea
+\subsection{Selecci\'on de ubicaci\'on} \label{sec:dos_ocho}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_8}
+\end{minipage}}
+
+
+
+\pagebreak %salto de pagina 6 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+
+\subsection{Selecci\'on de la distribuci\'on del teclado} \label{sec:dos_nueve}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_9}
+\end{minipage}}
+
+\linea
+\subsection{Selecci\'on de tarjeta de red} \label{sec:dos_diez}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_10}
+\end{minipage}}
+
+
+\linea
+\subsection{Configuraci\'on del nombre maquina} \label{sec:dos_once}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_11}
+\end{minipage}}
+
+
+\pagebreak %salto de pagina 7 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Ingreso de nombre de dominio de Cliente} \label{sec:dos_doce}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_12}
+\end{minipage}}
+
+
+\linea
+\subsection{Configuraci\'on de Password Superusuario o ROOT} \label{sec:dos_trece}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_13}
+\end{minipage}}
+
+
+\linea
+\subsection{Introducimos nuevamente la contrase\~na para verificaci\'on} \label{sec:dos_catorce}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_14}
+\end{minipage}}
+
+
+\pagebreak %salto de pagina 8 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Cuenta de usuario administrador} \label{sec:dos_quince}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_15}
+\end{minipage}}
+
+\linea
+\subsection{Nombre de usuario} \label{sec:dos_dieciseis}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_17}
+\end{minipage}}
+
+\linea
+\subsection{Contrase\~na de la cuenta de usuario} \label{sec:dos_dieciciete}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_18}
+\end{minipage}}
+
+
+\pagebreak %salto de pagina 9 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Selecci\'on de zona horaria} \label{sec:dos_dieciocho}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_19}
+\end{minipage}}
+
+\linea
+\subsection{Seleccionamos el m\'etodo de la partici\'on manual} \label{sec:dos_diecinueve}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_20}
+\end{minipage}}
+
+
+\linea
+\subsection{Seleccionamos el disco a utilizar} \label{sec:dos_veinte}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_21}
+\end{minipage}}
+
+
+\pagebreak %salto de pagina 10 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Advertencia antes de crear la nueva tabla de particiones} \label{sec:dos_veintiuno}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_22}
+\end{minipage}}
+
+\linea
+\subsection{Podemos observar el espacio libre} \label{sec:dos_veintidos}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_23}
+\end{minipage}}
+
+\linea
+\subsection{Creamos una nueva partici\'on} \label{sec:dos_veintitres}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_24}
+\end{minipage}}
+
+\pagebreak %salto de pagina 11 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Especificamos el tama\~no de la SWAP, que dejaremos en 1GB} \label{sec:dos_veinticuatro}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_25}
+\end{minipage}}
+
+\linea
+\subsection{Seleccionamos el tipo de Partici\'on creada} \label{sec:dos_veinticinco}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_26}
+\end{minipage}}
+
+\linea
+\subsection{Seleccionamos Principio para continuar con la creaci\'on de las particiones} \label{sec:dos_veintiseis}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_27}
+\end{minipage}}
+
+\pagebreak %salto de pagina 12 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Podemos observar el resultado del proceso anterior} \label{sec:dos_veinticiete}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_28}
+\end{minipage}}
+
+\linea
+\subsection{Seleccionamos como se utilizara la partici\'on creada} \label{sec:dos_veintiocho}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_29}
+\end{minipage}}
+
+\linea
+\subsection{Se finaliza con la creaci\'on del \'area de intercambio} \label{sec:dos_veintinueve}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_30}
+\end{minipage}}
+
+\pagebreak %salto de pagina 13 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Continuamos, como en los pasos anteriores, con la creaci\'on de las particiones de /root (Donde se encuentra ubicado el directorio ra\'iz '/' con excepci\'on del /boot) y la partici\'on /home} \label{sec:dos_treinta}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_31}
+\end{minipage}}
+
+\linea
+\subsection{Las particiones fueron creadas y finalizamos con el particionado} \label{sec:dos_treintaydos}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_32}
+\end{minipage}}
+
+\linea
+\subsection{Despu\'es de confirmar la escritura del particionado, comienza la instalaci\'on} \label{sec:dos_treintaytres}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_33}
+\end{minipage}}
+
+\pagebreak %salto de pagina 14 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Durante la instalaci\'on se despliega la siguiente ventana para la configuraci\'on de los paquetes de Debian, donde debemos seleccionar 'No' porque no contamos con otro disco} \label{sec:dos_treintaycuatro}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_34}
+\end{minipage}}
+
+\linea
+\subsection{En la siguiente consulta, selecionamos 'No', para permitir una instalaci\'on reducida del S.O.} \label{sec:dos_treintaycinco}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_35}
+\end{minipage}}
+
+\linea
+\subsection{Configuramos el gestor de paquetes para que nuestra distribuci\'on se mantenga actualizada} \label{sec:dos_treintayseis}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_36}
+\end{minipage}}
+
+\pagebreak %salto de pagina 15 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Instalaci\'on del gestor de arranque multiple GRUB} \label{sec:dos_treintayciete}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_37}
+\end{minipage}}
+
+\linea
+\subsection{Selecci\'on de la ubicaci\'on del gestor de arranque GRUB} \label{sec:dos_treintayocho}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_38}
+\end{minipage}}
+
+\linea
+\subsection{Mensaje del t\'ermino de la Instlacion del S.O.} \label{sec:dos_treintaynueve}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_39}
+\end{minipage}}
+
+\pagebreak %salto de pagina 15 y encabezados
+\noindent\begin{minipage}{0.2\textwidth} %logo
+\includegraphics[width=\linewidth]{logo2}
+\end{minipage}
+
+\subsection{Reinicio de la maquina y arranque del servidor} \label{sec:dos_cuarente}
+\centerline{\begin{minipage}{.4\textwidth}
+	\includegraphics[width=\linewidth, height=60mm]{paso_40}
+\end{minipage}}
+
+
+\end{document}
